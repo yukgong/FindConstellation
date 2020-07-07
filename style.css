@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    border-width: 0px;
+    box-sizing: border-box;
+    
+}
+
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+}
+/* .background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.2;
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/33e97898168295.5ed9008f5a1c6.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+} */
+
+.wrapper{
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.type{
+    font-size: 3vw;
+    margin-bottom: 1rem;
+}
+
+.title{
+    font-size: 5vw;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+}
+
+#getCntconstella{
+    display: block;
+    margin: 0 auto;
+    font-size: 2vw;
+    padding-left: 1em;
+    padding-right: 1em;
+    height : 3em;
+    border-radius: 0.2em;
+}
+
+.selectBox{
+    font-size: 2vw;
+    padding-left: 1em;
+    padding-right: 1em;
+    height : 3em;
+    border-radius: 0.2em;
+}
