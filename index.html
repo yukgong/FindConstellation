@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별자리 찾기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <container class="wrapper">
+        <div class="background"></div>
+        <div class="type">별자리 찾기</div>
+        <div class="section main">
+            <div class="title">생일을 입력하세요</div>
+            <select id="birthMonth" class="selectBox"></select>
+            <select id="birthDay" class="selectBox"></select>
+            <input id="getCntconstella" type="button" value="검색하기">
+        </div>
+        <div class="section sub">
+            <div id="constellation"></div>
+        </div>
+    </container>
+
+    <script src="birthDayToConstellation.js"></script>
+</body>
+
+</html>
