@@ -7,43 +7,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Find Your Constellation</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mouseFollower.css">
 </head>
 
 <body>
-
+    <div class="mouseFollower">
+        <span class="pageX">n/a</span>° <span class="pageY">n/a</span>’ N
+    </div>
     <div class="bgWarpper">
         <div class="siteTitle">Find Your Constellation</div>
         <div class="bgLine"></div>
         <div class="frame"></div>
-        <div class="background"></div>s
+        <canvas class="background" width="1920" height="1080"></canvas>
     </div>
     <div class="wrapper">
         <div class="section main">
-            <div class="title"><b>Select</b> your</br> date of <b>birth</b></div>
             <div class="btnGroup">
                 <div class="selectGroup">
                     <p>Month</p>
-                    <select class="selectBox birthMonth"></select>
-                    <div class="arrow"></div>
+                    <div class="selectBoxGroup">
+                        <select class="selectBox birthMonth"></select>
+                        <div class="arrow"></div>
+                    </div>
                     <div class="line"></div>
                 </div>
                 <div class="selectGroup">
                     <p>Day</p>
-                    <select class="selectBox birthDay"></select>
-                    <div class="arrow"></div>
+                    <div class="selectBoxGroup">
+                        <select class="selectBox birthDay"></select>
+                        <div class="arrow"></div>
+                    </div>
                 </div>
 
                 <input class="getCntconstella" type="button" value="Find!">
             </div>
         </div>
     </div>
-    <div class="section sub">
-        <div class="constellation result"></div>
-    </div>
+    <div class="title"><b>Select</b> Your</br> <b>Birth Date</b></div>
+    <div class="constellation result"></div>
 
     <script src="js/birthDayToConstellation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="js/background.js "></script>
+    <script src="js/mouseEvent.js "></script>
 </body>
 
 </html>

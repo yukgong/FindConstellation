@@ -1,7 +1,8 @@
 const birthMonth = document.querySelector(".birthMonth"),
     birthDay = document.querySelector(".birthDay"),
     getCntconstella = document.querySelector(".getCntconstella"),
-    star = document.querySelector(".constellation");
+    star = document.querySelector(".constellation"),
+    title = document.querySelector(".title");
 
 function paintMonth() {
     let num = 0;
@@ -60,63 +61,68 @@ function getDay() {
 
 
 function handleDateEvent() {
+    title.remove();
 
     let month = getMonth();
     let day = getDay();
 
     if (("03" === month && ("21" <= day && day <= "31")) ||
         ("04" === month && ("01" <= day && day <= "19"))) {
-        star.innerHTML = "양자리"
+        star.innerHTML = "Aries"
     }
 
     if (("04" === month && ("21" <= day && day <= "31")) ||
         ("05" === month && ("01" <= day && day <= "20"))) {
-        star.innerHTML = "황소자리"
+        star.innerHTML = "Taurus"
     }
 
     if (("05" === month && ("21" <= day && day <= "31")) ||
         ("06" === month && ("01" <= day && day <= "21"))) {
-        star.innerHTML = "쌍둥이자리"
+        star.innerHTML = "Gemini"
     }
 
     if (("06" === month && ("22" <= day && day <= "31")) ||
         ("07" === month && ("01" <= day && day <= "22"))) {
-        star.innerHTML = "게자리"
+        star.innerHTML = "Cancer"
     }
 
     if (("07" === month && ("23" <= day && day <= "31")) ||
         ("08" === month && ("01" <= day && day <= "22"))) {
-        star.innerHTML = "사자자리"
+        star.innerHTML = "Leo"
     }
 
     if (("08" === month && ("23" <= day && day <= "31")) ||
         ("09" === month && ("01" <= day && day <= "23"))) {
-        star.innerHTML = "처녀자리"
+        star.innerHTML = "Virgo"
+    }
+    if (("09" === month && ("23" <= day && day <= "31")) ||
+        ("10" === month && ("01" <= day && day <= "22"))) {
+        star.innerHTML = "Libra"
     }
 
     if (("10" === month && ("23" <= day && day <= "31")) ||
         ("11" === month && ("01" <= day && day <= "22"))) {
-        star.innerHTML = "전갈자리"
+        star.innerHTML = "Scorpius"
     }
 
     if (("11" === month && ("23" <= day && day <= "31")) ||
         ("12" === month && ("01" <= day && day <= "24"))) {
-        star.innerHTML = "궁수자리"
+        star.innerHTML = "Sagittarius"
     }
 
     if (("12" === month && ("25" <= day && day <= "31")) ||
         ("01" === month && ("01" <= day && day <= "19"))) {
-        star.innerHTML = "염소자리"
+        star.innerHTML = "Capricornus"
     }
 
     if (("01" === month && ("20" <= day && day <= "31")) ||
         ("02" === month && ("01" <= day && day <= "18"))) {
-        star.innerHTML = "물병자리"
+        star.innerHTML = "Aquarius"
     }
 
     if (("02" === month && ("19" <= day && day <= "31")) ||
         ("03" === month && ("01" <= day && day <= "20"))) {
-        star.innerHTML = "물고기자리"
+        star.innerHTML = "Pisces"
     }
 }
 

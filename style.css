@@ -48,13 +48,11 @@ html {
 
 .background {
     z-index: -5;
-    position: relative;
-    background-position: center, center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 120%;
-    height: 120vh;
-    background-image: url(img/background.png);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100vh;
+    background-color: aqua;
 }
 
 .frame {
@@ -80,28 +78,36 @@ html {
 }
 
 .result {
-    font-size: 3vw;
-    margin-bottom: 1rem;
+    z-index: 10;
+    line-height: 80px;
+    font-size: 80px;
+    font-weight: bold;
 }
 
 .title {
+    z-index: 10;
+    text-align: center;
     font-size: 40px;
-    margin-bottom: 24px;
+    line-height: 52px;
+    margin-bottom: 16px;
 }
 
 .btnGroup {
     display: flex;
     flex-direction: column;
-    justify-content: right;
 }
 
 .getCntconstella {
     display: block;
-    font-size: 2vw;
-    padding-left: 1em;
-    padding-right: 1em;
-    height: 3em;
-    border-radius: 0.2em;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 32px 0 0 auto;
+    width: 218px;
+    height: 60px;
+    text-align: center;
+    border: solid 1px #fff;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
 }
 
 .selectGroup {
@@ -111,22 +117,63 @@ html {
     margin: 0 0 0 auto;
 }
 
+.selectGroup p {
+    position: relative;
+    top: 6px;
+    margin-right: 12px;
+}
+
 .selectBox {
     background-color: rgba(0, 0, 0, 0);
     color: white;
+    font-weight: bold;
     line-height: 80px;
     font-size: 80px;
+    width: 154px;
     border: 0;
-    width: 130px;
+    margin-left: 8px;
+    /* 네이티브 외형 감추기 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
-.selectBox:first-child {
-    margin-right: 20px;
+.selectBoxGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.selectBoxGroup:hover {
+    background-color: #000000;
+}
+
+.selectBox:focus {
+    outline: 0;
+}
+
+.selectBox option {
+    font-size: 24px;
+    background-color: #000000;
+}
+
+.arrow {
+    position: relative;
+    top: 6px;
+    width: 30px;
+    height: 22px;
+    background-image: url(img/arrow_down.svg);
+    background-size: 30px 22px;
+    margin-left: -48px;
+    margin-right: 12px;
 }
 
 .line {
+    position: relative;
+    top: 4px;
     height: 1px;
     width: 60px;
+    margin-left: 16px;
     background-color: #fff;
 }
 
