@@ -14,15 +14,33 @@ function setImages() {
 
 // 캔버스를 창크기에 맞추기
 function setLayout() {
-    const heightRation = window.innerHeight / 1080;
+    // const screenHeightRatio = window.innerHeight / 1080;
+
+
+    const widthRatio = window.innerWidth / canvas.width * 6;
+    const heightRatio = window.innerHeight / canvas.height * 6;
+    let canvasScaleRatio;
+
+    if (widthRatio <= heightRatio) {
+        // 캔버스보다 브라우저 창이 홀쭉한 경우
+        canvasScaleRatio = heightRatio;
+    } else {
+        // 캔버스보다 브라우저 창이 납작한 경우
+        canvasScaleRatio = widthRatio;
+    }
+
     canvas.style.transform =
-        `translate3d(-50%, -50%, 0) scale(${heightRation*10})`;
+        `translate3d(-50%, -50%, 0) scale(${canvasScaleRatio})`;
 }
 
 window.addEventListener('load', () => {
     setImages();
     setLayout();
+});
 
+window.addEventListener('resize', () => {
+    setImages();
+    setLayout();
 });
 
 function touches(e) {
@@ -37,7 +55,6 @@ function touches(e) {
     // console.log(y + ' | ' + h + ' | ' + t);
     // console.log(x);
 
-
     TweenMax.to(canvas, 1, {
         top: t + "%",
         left: l + "%"
@@ -48,3 +65,6 @@ function touches(e) {
 window.addEventListener("mousemove", touches);
 window.addEventListener("touchstart", touches);
 window.addEventListener("touchmove", touches);
+
+
+//----
