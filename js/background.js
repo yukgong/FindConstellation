@@ -6,31 +6,26 @@ const context = canvas.getContext('2d');
 function setImages() {
     let imgElem = new Image();
     imgElem.src = "../findConstellation/img/background.png";
+
     imgElem.onload = function() {
         context.drawImage(imgElem, 0, 0);
-    };
+
+    }
 }
 
 
 // 캔버스를 창크기에 맞추기
 function setLayout() {
-    // const screenHeightRatio = window.innerHeight / 1080;
-
-
-    const widthRatio = window.innerWidth / canvas.width * 6;
-    const heightRatio = window.innerHeight / canvas.height * 6;
-    let canvasScaleRatio;
+    const widthRatio = window.innerWidth / canvas.width;
+    const heightRatio = window.innerHeight / canvas.height;
 
     if (widthRatio <= heightRatio) {
         // 캔버스보다 브라우저 창이 홀쭉한 경우
-        canvasScaleRatio = heightRatio;
+        canvas.style.height = "500%";
     } else {
         // 캔버스보다 브라우저 창이 납작한 경우
-        canvasScaleRatio = widthRatio;
+        canvas.style.width = "500%";
     }
-
-    canvas.style.transform =
-        `translate3d(-50%, -50%, 0) scale(${canvasScaleRatio})`;
 }
 
 window.addEventListener('load', () => {
