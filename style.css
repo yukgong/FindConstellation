@@ -49,11 +49,11 @@ html {
 .background {
     z-index: -5;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     height: 100vh;
-    background-color: aqua;
-    transform: translate3D(-50%, -50%, 0);
+    background-color: black;
+    /* transform: translate3D(-50%, -50%, 0); */
 }
 
 .frame {
@@ -182,4 +182,20 @@ html {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.starImg {
+    display: none;
+    opacity: 0;
+    width: 40%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+.show {
+    display: block;
 }

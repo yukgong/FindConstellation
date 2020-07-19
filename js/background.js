@@ -2,41 +2,47 @@ const canvas = document.querySelector('.background');
 const context = canvas.getContext('2d');
 
 
-// 캔버스 이미지 세팅하기
+// 창크기에 맞추기 캔버스 이미지 세팅하기
 function setImages() {
-    let imgElem = new Image();
-    imgElem.src = "../findConstellation/img/background.png";
+    let verticalImg = new Image();
+    verticalImg.src = "../findConstellation/img/background_vertical.png";
+    let horizontalImg = new Image();
+    horizontalImg.src = "../findConstellation/img/background_horizontal.png";
+    let rectangleImg = new Image();
+    rectangleImg.src = "../findConstellation/img/background_rectangle.png";
 
-    imgElem.onload = function() {
-        context.drawImage(imgElem, 0, 0);
+    let widthValue = window.innerWidth;
+    let heightValue = window.innerHeight;
+    // console.log("w " + widthValue);
+    // console.log("h " + heightValue);
 
-    }
-}
-
-
-// 캔버스를 창크기에 맞추기
-function setLayout() {
-    const widthRatio = window.innerWidth / canvas.width;
-    const heightRatio = window.innerHeight / canvas.height;
-
-    if (widthRatio <= heightRatio) {
-        // 캔버스보다 브라우저 창이 홀쭉한 경우
-        canvas.style.height = "500%";
+    if (-100 <= parseInt(widthValue - heightValue) && parseInt(widthValue - heightValue) <= 100) {
+        canvas.style.height = heightValue * 3 + "px";
+        canvas.style.width = "auto";
+        rectangleImg.onload = function() {
+            context.drawImage(rectangleImg, 0, 0);
+        }
     } else {
-        // 캔버스보다 브라우저 창이 납작한 경우
-        canvas.style.width = "500%";
+        if (widthValue < heightValue) {
+            // 캔버스보다 브라우저 창이 홀쭉한 경우
+            canvas.style.height = heightValue * 3 + "px";
+            canvas.style.width = "auto";
+            verticalImg.onload = function() {
+                context.drawImage(verticalImg, 0, 0);
+            }
+        } else {
+            // 캔버스보다 브라우저 창이 납작한 경우
+            canvas.style.width = widthValue * 3 + "px";
+            canvas.style.height = "auto";
+            horizontalImg.onload = function() {
+                context.drawImage(horizontalImg, 0, 0);
+            }
+        }
     }
 }
 
-window.addEventListener('load', () => {
-    setImages();
-    setLayout();
-});
-
-window.addEventListener('resize', () => {
-    setImages();
-    setLayout();
-});
+window.addEventListener('load', setImages);
+window.addEventListener('resize', setImages);
 
 function touches(e) {
     var x = e.touches ? e.touches[0].clientX : e.clientX,
@@ -49,7 +55,7 @@ function touches(e) {
     //10 / (y - (h / 2)) * 100;             
     // console.log(y + ' | ' + h + ' | ' + t);
     // console.log(x);
-
+    // console.log(t);
     TweenMax.to(canvas, 1, {
         top: t + "%",
         left: l + "%"
