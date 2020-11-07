@@ -5,11 +5,11 @@ const context = canvas.getContext('2d');
 // 창크기에 맞추기 캔버스 이미지 세팅하기
 function setImages() {
     let verticalImg = new Image();
-    verticalImg.src = "../findConstellation/img/background_vertical.png";
+    verticalImg.src = "../img/background_vertical.png";
     let horizontalImg = new Image();
-    horizontalImg.src = "../findConstellation/img/background_horizontal.png";
+    horizontalImg.src = "../img/background_horizontal.png";
     let rectangleImg = new Image();
-    rectangleImg.src = "../findConstellation/img/background_rectangle.png";
+    rectangleImg.src = "../img/background_rectangle.png";
 
     let widthValue = window.innerWidth;
     let heightValue = window.innerHeight;
