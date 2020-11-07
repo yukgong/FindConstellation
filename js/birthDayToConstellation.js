@@ -189,7 +189,7 @@ function handleDateEvent() {
 }
 
 function setStarImg(starName) {
-    starImg.src = `../findConstellation/img/star_${starName}.png`;
+    starImg.src = `img/star_${starName}.png`;
     setTimeout(() => {
         starImg.classList.add("show");
         TweenMax.to(starImg, 1, {
