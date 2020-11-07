@@ -13,11 +13,11 @@ function setImages() {
     canvas.style.width = widthValue * 2 + "px";
 
     let verticalImg = new Image();
-    verticalImg.src = "../findConstellation/img/background_vertical.jpg";
+    verticalImg.src = "img/background_vertical.jpg";
     let horizontalImg = new Image();
-    horizontalImg.src = "../findConstellation/img/background_horizontal.jpg";
+    horizontalImg.src = "img/background_horizontal.jpg";
     let rectangleImg = new Image();
-    rectangleImg.src = "../findConstellation/img/background_rectangle.jpg";
+    rectangleImg.src = "img/background_rectangle.jpg";
 
 
     if (-100 <= parseInt(widthValue - heightValue) && parseInt(widthValue - heightValue) <= 100) {
